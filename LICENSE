@@ -1,12 +1,12 @@
 Proprietary Software License
-Copyright (C) 2026 TheAuditorTool. All Rights Reserved.
+Copyright (C) 2026 Code Reality Labs (coderealitylabs.com). All Rights Reserved.
 
 ================================================================================
 
 1. GRANT OF LICENSE
 
    Arbiter and its associated documentation ("Software") are the exclusive
-   property of TheAuditorTool ("Licensor"). No license, right, or interest
+   property of Code Reality Labs ("Licensor"). No license, right, or interest
    in the Software is granted to any person or entity except under the terms
    of a separate written agreement executed by the Licensor.
 
@@ -19,6 +19,9 @@ Copyright (C) 2026 TheAuditorTool. All Rights Reserved.
    (d) Create derivative works based on the Software;
    (e) Use the Software for commercial, non-commercial, or any other purpose.
 
+   These restrictions apply to the proprietary portions of the Software and
+   are subject to clause 4.
+
 3. INTELLECTUAL PROPERTY
 
    The Software, including its source code, data models, system designs,
@@ -27,30 +30,59 @@ Copyright (C) 2026 TheAuditorTool. All Rights Reserved.
 
 4. THIRD-PARTY COMPONENTS
 
-   The Software may incorporate third-party open-source components distributed
-   under their original licenses. Their inclusion does not grant any
-   additional rights to the proprietary portions of the Software.
+   (a) The Software includes third-party open-source components that are
+       distributed under their own licenses. Each of them, with its license
+       text, is listed in the file THIRD_PARTY_LICENSES.txt that accompanies
+       the Software, and in the software bill of materials (the .cdx.json
+       file) that accompanies it.
 
-5. NO WARRANTY
+   (b) Each third-party component is licensed to you under its own license,
+       not under this License. Nothing in this License limits, restricts or
+       replaces any right that a third-party license grants you. Where a
+       third-party license grants the right to modify that component, to
+       relink the Software with a modified version of it, or to reverse
+       engineer the Software as far as needed to debug such modifications
+       (as the GNU Lesser General Public License does), clause 2 does not
+       apply to the exercise of that right.
+
+   (c) The inclusion of third-party components does not grant any additional
+       rights to the proprietary portions of the Software.
+
+5. MICROSOFT DISTRIBUTABLE CODE
+
+   The Windows builds of the Software include Microsoft Distributable Code
+   (the Microsoft Visual C++ runtime libraries), copyrighted by Microsoft
+   Corporation. As a condition of using the Software, you agree that you
+   will not:
+   (a) alter any copyright, trademark or patent notice in the Microsoft
+       Distributable Code;
+   (b) use Microsoft's trademarks in your programs' names or in a way that
+       suggests your programs come from or are endorsed by Microsoft;
+   (c) distribute the Microsoft Distributable Code to run on a platform
+       other than Microsoft operating systems, run-time technologies or
+       application platforms; or
+   (d) include the Microsoft Distributable Code in malicious, deceptive or
+       unlawful programs.
+
+6. NO WARRANTY
 
    THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS
    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
    FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
 
-6. LIMITATION OF LIABILITY
+7. LIMITATION OF LIABILITY
 
    IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR
    OTHER LIABILITY ARISING FROM THE USE OF OR INABILITY TO USE THE SOFTWARE.
 
-7. GOVERNING LAW
+8. GOVERNING LAW
 
    This license shall be governed by the laws of the European Union and the
    member state in which the Licensor is domiciled.
 
-8. COMMERCIAL LICENSING
+9. COMMERCIAL LICENSING
 
    For commercial licensing inquiries, acquisition, or partnership:
-   TheAuditorTool
-   https://github.com/TheAuditorTool
+   Code Reality Labs, https://coderealitylabs.com
 
 ================================================================================

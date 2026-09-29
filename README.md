@@ -17,17 +17,17 @@ This repository is the official release and product-information channel. It does
 - **Cost-aware routing:** Send work to an appropriate capability tier instead of defaulting every task to the most expensive model.
 - **Approval-aware operations:** Keep consequential actions visible to the operator.
 - **Local coordination:** Use operating-system-native local communication without requiring a public control port.
-- **Ecosystem integration:** Coordinate TheAuditor, Curator, Warden, and third-party clients as separate capabilities.
+- **Ecosystem integration:** Work alongside the other Code Reality Labs tools (TheAuditor, Curator, Warden) and third-party clients as separate, optional capabilities.
 
 ## Follow development
 
 - Product: [arbitermcp.com](https://arbitermcp.com)
 - Engineering journal: [blog.arbitermcp.com](https://blog.arbitermcp.com)
-- Creator: [TheAuditorTool](https://github.com/TheAuditorTool)
+- Made by: [Code Reality Labs](https://coderealitylabs.com)
 
 ## License
 
-Arbiter is proprietary software. Copyright (C) 2026 TheAuditorTool. All rights reserved.
+Arbiter is proprietary software. Copyright (C) 2026 Code Reality Labs. All rights reserved.
 
 See [LICENSE](LICENSE) for terms. Commercial licensing and partnership inquiries:
-[TheAuditorTool](https://github.com/TheAuditorTool).
+[Code Reality Labs](https://coderealitylabs.com).
