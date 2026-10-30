@@ -6,18 +6,29 @@ Arbiter is a local orchestration layer for dispatching, supervising, and governi
 
 ## Release status
 
-Arbiter is a working product entering IP hardening, licensing, and public packaging preparation.
+Arbiter 0.1.0 is the first public pre-release, for Windows and Linux: an early build for early adopters. Download it from [Releases](https://github.com/TheAuditorTool/ArbiterMCP/releases).
 
-This repository is the official release and product-information channel. It does not currently contain distributable software.
+Arbiter needs a license. During the pre-release it is free: ask for one at [arbitermcp.com](https://arbitermcp.com), and the email brings your key. Activate it in the app's first screen.
 
-## What it changes
+## Which file to download
 
-- **Provider and client independence:** Coordinate different models and agent clients through one control plane.
-- **Durable supervision:** Preserve run state and make interrupted work visible for recovery.
-- **Cost-aware routing:** Send work to an appropriate capability tier instead of defaulting every task to the most expensive model.
-- **Approval-aware operations:** Keep consequential actions visible to the operator.
-- **Local coordination:** Use operating-system-native local communication without requiring a public control port.
-- **Ecosystem integration:** Work alongside the other Code Reality Labs tools (TheAuditor, Curator, Warden) and third-party clients as separate, optional capabilities.
+- **Windows 10 or 11 (x64):** `Arbiter_0.1.0_x64-setup.exe` (installer) or `Arbiter_0.1.0_x64_en-US.msi`. Windows will warn that it protected your PC, because this build is not code-signed yet: choose More info, then Run anyway.
+- **Linux x64:** `Arbiter_0.1.0_amd64.deb` (`sudo apt install ./Arbiter_0.1.0_amd64.deb`) or `Arbiter_0.1.0_amd64.AppImage`. Arbiter needs glibc 2.34 or newer, and the desktop app needs WebKitGTK 4.1.
+- `arbiter-0.1.0-windows-x64.zip` and `arbiter-0.1.0-linux-x64.tar.gz` hold the engine alone, without the desktop app.
+
+macOS is not supported yet. The release notes list everything else Arbiter needs.
+
+## Check what you downloaded
+
+Every file is listed with its SHA256 in `arbiter-0.1.0-<os>-x64.SHA256SUMS`, signed with the Code Reality Labs release key `arbiter-release-signing-key.asc` (fingerprint `0CF6 23D6 6975 AC42 EF02 A1EA 98F3 6798 1E68 D3E3`), all attached to the release.
+
+```
+gpg --import arbiter-release-signing-key.asc
+gpg --verify arbiter-0.1.0-linux-x64.SHA256SUMS.asc arbiter-0.1.0-linux-x64.SHA256SUMS
+sha256sum -c --ignore-missing arbiter-0.1.0-linux-x64.SHA256SUMS
+```
+
+On Windows, `Get-FileHash .\Arbiter_0.1.0_x64-setup.exe` in PowerShell prints the SHA256 to compare with its line in `arbiter-0.1.0-windows-x64.SHA256SUMS`; GnuPG for Windows (Gpg4win) checks the signature with the same `gpg --verify` command.
 
 ## Follow development
 
