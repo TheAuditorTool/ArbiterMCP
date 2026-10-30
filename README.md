@@ -15,6 +15,7 @@ Arbiter needs a license. During the pre-release it is free: ask for one at [arbi
 - **Windows 10 or 11 (x64):** `Arbiter_0.1.0_x64-setup.exe` (installer) or `Arbiter_0.1.0_x64_en-US.msi`. Windows will warn that it protected your PC, because this build is not code-signed yet: choose More info, then Run anyway.
 - **Linux x64:** `Arbiter_0.1.0_amd64.deb` (`sudo apt install ./Arbiter_0.1.0_amd64.deb`) or `Arbiter_0.1.0_amd64.AppImage`. Arbiter needs glibc 2.34 or newer, and the desktop app needs WebKitGTK 4.1.
 - `arbiter-0.1.0-windows-x64.zip` and `arbiter-0.1.0-linux-x64.tar.gz` hold the engine alone, without the desktop app.
+- **Graphics card:** the local model needs about 10 GB of graphics memory, so a card with 12 GB or more, and a driver with Vulkan support, which current NVIDIA, AMD and Intel drivers have.
 
 macOS is not supported yet. The release notes list everything else Arbiter needs.
 
