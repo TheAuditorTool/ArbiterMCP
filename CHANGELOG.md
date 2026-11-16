@@ -33,10 +33,7 @@ documents and follows the conversation, and a new installation starts in a stron
 - The command line of a release build carries what the app, the installers, the service and agents run, plus
   support: `arbiter daemon`, `service`, `setup-llm`, `setup-mcp`, `mcp`, `doctor` and `error-lookup`.
   Everything else is done in the app or from the phone, activating and deactivating the license included.
-- Tickets have a new type, `security`. A build before 0.1.4 cannot read a ticket of that type, so before going
-  back to 0.1.3, give such tickets another type. The app and the engine must be of the same version to show it.
-
-### New
+- Tickets have a new type, `security`. The app and the engine must be of the same version to show it.
 - **Codex on the Seats page.** Tick "Codex account" on the Seats page and the account your Codex client is
   logged into gets a card like a Claude seat: the 5-hour and weekly meters with their resets, the plan, a credit
   balance where the plan has one, and how many limit resets the provider has granted. Arbiter asks the installed
