@@ -11,20 +11,22 @@ agents on your phone, and a clean pickup after a reboot.
 
 > ## Release status
 >
-> **Arbiter 0.1.3 is the current public pre-release** (November 12, 2026), for Windows 10 and 11
+> **Arbiter 0.1.4 is the current public pre-release** (November 16, 2026), for Windows 10 and 11
 > and 64-bit Linux. It is free until March 31, 2027: ask for a license at
 > [arbitermcp.com](https://arbitermcp.com/#get) and the key arrives by email.
 >
-> The screenshots and the tour on this page were recorded on the upcoming 0.1.4 build.
+> New in 0.1.4: Codex on the Seats page, Codex terminals that carry on by themselves when their usage
+> limit resets, an Overview that says what each terminal did, and a 7-day usage chart. Every change, release
+> by release, is in the [changelog](CHANGELOG.md).
 
 ## Get it running
 
 | Platform | Download | Notes |
 |---|---|---|
-| Windows 10 or 11, x64 | [`Arbiter_0.1.3_x64-setup.exe`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.3/Arbiter_0.1.3_x64-setup.exe) (77 MB) | or [`Arbiter_0.1.3_x64_en-US.msi`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.3/Arbiter_0.1.3_x64_en-US.msi) |
-| Debian, Ubuntu and derivatives, x64 | [`Arbiter_0.1.3_amd64.deb`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.3/Arbiter_0.1.3_amd64.deb) | `sudo apt install ./Arbiter_0.1.3_amd64.deb` |
-| Any Linux, x64 | [`Arbiter_0.1.3_amd64.AppImage`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.3/Arbiter_0.1.3_amd64.AppImage) | glibc 2.34 or newer, WebKitGTK 4.1 |
-| Engine only, no desktop app | `arbiter-0.1.3-windows-x64.zip`, `arbiter-0.1.3-linux-x64.tar.gz` | on the [release page](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.3) |
+| Windows 10 or 11, x64 | [`Arbiter_0.1.4_x64-setup.exe`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.4/Arbiter_0.1.4_x64-setup.exe) (85 MB) | or [`Arbiter_0.1.4_x64_en-US.msi`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.4/Arbiter_0.1.4_x64_en-US.msi) |
+| Debian, Ubuntu and derivatives, x64 | [`Arbiter_0.1.4_amd64.deb`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.4/Arbiter_0.1.4_amd64.deb) | `sudo apt install ./Arbiter_0.1.4_amd64.deb` |
+| Any Linux, x64 | [`Arbiter_0.1.4_amd64.AppImage`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.4/Arbiter_0.1.4_amd64.AppImage) | glibc 2.34 or newer, WebKitGTK 4.1 |
+| Engine only, no desktop app | `arbiter-0.1.4-windows-x64.zip`, `arbiter-0.1.4-linux-x64.tar.gz` | on the [release page](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.4) |
 
 1. **Download** the file for your system.
 2. **Get your free key** at [arbitermcp.com](https://arbitermcp.com/#get). It runs until March 31, 2027,
@@ -62,7 +64,8 @@ on it. Sessions run natively on Windows 10 and 11, with no Linux layer required,
 
 Arbiter reads your Claude usage and projects when your weekly limit fills at the pace you are working,
 model limits included. It replays its own predictions over the past week and tells you how far off it
-was, so you know how much to trust it. Track one Claude account or several, side by side.
+was, so you know how much to trust it. Track one Claude account or several side by side, with your Codex
+account beside them.
 
 ![Arbiter's Seats page: weekly and model usage per account, and a written forecast of when the current week fills](docs/arbiter-seats.webp)
 
@@ -71,7 +74,9 @@ was, so you know how much to trust it. Track one Claude account or several, side
 Connect Telegram (WhatsApp and Signal are in beta) and supervise from anywhere: see what a session did and
 what it waits on, send it more work, approve a plan, attach photos and files to a ticket, or stop
 everything. Two-factor approval is on the moment you connect a channel, every action from the phone needs
-a code from your authenticator app, and an approval binds to the one request that asked for it.
+a code from your authenticator app, and an approval binds to the one request that asked for it. The
+phone's commands work on every machine; requests in plain words are answered by the local model, so they
+need it running.
 
 ### Find out what a feature actually cost
 
@@ -139,18 +144,18 @@ tickets, the brief, the phone channel and the settings. Also on [arbitermcp.com]
 
 ## Check what you downloaded
 
-Every file is listed with its SHA256 in `arbiter-0.1.3-<os>-x64.SHA256SUMS`, signed with the Code Reality
+Every file is listed with its SHA256 in `arbiter-0.1.4-<os>-x64.SHA256SUMS`, signed with the Code Reality
 Labs release key `arbiter-release-signing-key.asc` (fingerprint
 `0CF6 23D6 6975 AC42 EF02 A1EA 98F3 6798 1E68 D3E3`), all attached to the release.
 
 ```
 gpg --import arbiter-release-signing-key.asc
-gpg --verify arbiter-0.1.3-linux-x64.SHA256SUMS.asc arbiter-0.1.3-linux-x64.SHA256SUMS
-sha256sum -c --ignore-missing arbiter-0.1.3-linux-x64.SHA256SUMS
+gpg --verify arbiter-0.1.4-linux-x64.SHA256SUMS.asc arbiter-0.1.4-linux-x64.SHA256SUMS
+sha256sum -c --ignore-missing arbiter-0.1.4-linux-x64.SHA256SUMS
 ```
 
-On Windows, `Get-FileHash .\Arbiter_0.1.3_x64-setup.exe` in PowerShell prints the SHA256 to compare with its
-line in `arbiter-0.1.3-windows-x64.SHA256SUMS`; GnuPG for Windows (Gpg4win) checks the signature with the
+On Windows, `Get-FileHash .\Arbiter_0.1.4_x64-setup.exe` in PowerShell prints the SHA256 to compare with its
+line in `arbiter-0.1.4-windows-x64.SHA256SUMS`; GnuPG for Windows (Gpg4win) checks the signature with the
 same `gpg --verify` command.
 
 ## Questions
