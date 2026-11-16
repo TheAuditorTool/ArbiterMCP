@@ -25,8 +25,7 @@ documents and follows the conversation, and a new installation starts in a stron
   arrow keys, and a third forecast at this week's average pace.
 - **A chat that keeps up.** The brain reads whole documents and follows the conversation, so "yes, do it" and
   "and the second one?" read as follow-ups.
-- **Safer from the first start.** A new installation starts in the `balanced` security mode, agents get a
-  narrower key, and on Windows the engine's control pipe is your account's alone.
+- **Safer from the first start.** A new installation starts in the `balanced` security mode.
 
 ### Upgrade notes
 - Nothing needs doing. An existing installation keeps the security mode it runs in; only a new installation
@@ -85,13 +84,6 @@ documents and follows the conversation, and a new installation starts in a stron
   the license, and the other databases use the license's key. Its first start needs no license server. The key
   that unlocks your provider keys is now kept sealed on this machine, so a license server outage at a start no
   longer locks them. The privacy notice says when the license server is contacted.
-- **Agents get a narrower key.** The MCP server that every agent starts now opens only what Arbiter's own tools
-  use, instead of every control the engine has. Nothing changes for an agent, and an MCP server of this version
-  talking to an older engine keeps working.
-- **On Windows**, the engine's control pipe and its token files are your account's alone, and the pipe refuses
-  clients from other machines.
-- **The engine's log no longer names where in Arbiter's code a line came from**, and an unexpected error is
-  logged as its type and message. Where Arbiter keeps a crash report for support, the details are sealed there.
 - **A picture handed to an agent keeps only what is needed to draw it:** everything else in a JPEG, PNG, GIF or
   WebP file is removed, not only location and camera details. A PNG or WebP stored on its side keeps which way
   up it is. Old Word, Excel and PowerPoint files are recognised by their content, and one with macros comes with
