@@ -34,6 +34,8 @@ documents and follows the conversation, and a new installation starts in a stron
   support: `arbiter daemon`, `service`, `setup-llm`, `setup-mcp`, `mcp`, `doctor` and `error-lookup`.
   Everything else is done in the app or from the phone, activating and deactivating the license included.
 - Tickets have a new type, `security`. The app and the engine must be of the same version to show it.
+
+### New
 - **Codex on the Seats page.** Tick "Codex account" on the Seats page and the account your Codex client is
   logged into gets a card like a Claude seat: the 5-hour and weekly meters with their resets, the plan, a credit
   balance where the plan has one, and how many limit resets the provider has granted. Arbiter asks the installed
