@@ -4,6 +4,8 @@
 coding agents: every terminal on one screen, a forecast of when your Claude limit runs out, your
 agents on your phone, and a clean pickup after a reboot.
 
+**When Codex hits its usage limit, Arbiter can pick up the run after reset.**
+
 **[arbitermcp.com](https://arbitermcp.com)** · [Watch the 5:40 tour](https://youtu.be/yvzHejrm77Y) ·
 [Blog](https://blog.arbitermcp.com) · Windows and Linux · Free during the pre-release
 
