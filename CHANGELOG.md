@@ -27,16 +27,13 @@ documents and follows the conversation, and a new installation starts in a stron
   "and the second one?" read as follow-ups.
 - **Safer from the first start.** A new installation starts in the `balanced` security mode, agents get a
   narrower key, and on Windows the engine's control pipe is your account's alone.
-- **A leaner command line.** A release build carries only what the app, the installers, the service and
-  support need; everything else is done in the app or from your phone.
 
 ### Upgrade notes
 - Nothing needs doing. An existing installation keeps the security mode it runs in; only a new installation
   starts in `balanced` (see Changed).
-- The command line of a release build now carries only what the app, the installers, the service and agents
-  run, plus support: `arbiter daemon`, `service`, `setup-llm`, `setup-mcp`, `mcp`, `doctor` and
-  `error-lookup`. Everything else is done in the app or from the phone, activating and deactivating the license
-  included. 0.1.3 hid the other commands from the help but still ran them.
+- The command line of a release build carries what the app, the installers, the service and agents run, plus
+  support: `arbiter daemon`, `service`, `setup-llm`, `setup-mcp`, `mcp`, `doctor` and `error-lookup`.
+  Everything else is done in the app or from the phone, activating and deactivating the license included.
 - Tickets have a new type, `security`. A build before 0.1.4 cannot read a ticket of that type, so before going
   back to 0.1.3, give such tickets another type. The app and the engine must be of the same version to show it.
 
@@ -146,8 +143,6 @@ documents and follows the conversation, and a new installation starts in a stron
 ### Removed
 - **The fleet**, which started several workers on the same task with nothing to compare or merge them, with the
   Overview's "Earlier fleets" list and the License panel's worker row.
-- **The command line beyond support** in a release build (see Upgrade notes), the editor protocol command
-  included, which 0.1.3 hid but still ran.
 - The chat's heartbeat and token count, which showed no real progress.
 
 ## [0.1.3](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.3), November 12, 2026
