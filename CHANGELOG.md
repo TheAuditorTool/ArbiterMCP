@@ -4,6 +4,74 @@ What changed in each public release of Arbiter, newest first. Every release's do
 checksums and the signature over them are on its page under
 [Releases](https://github.com/TheAuditorTool/ArbiterMCP/releases).
 
+## [0.1.5](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.5), November 17, 2026
+
+A fix release for the 0.1.4 pre-release: you can close a terminal from the phone, from the brain or from an
+agent, a session that waits on background work shows as waiting, `/seat next` finds a seat when the live one is at
+its limit, the Chat panel shows formatting, and a new license key can take over from one that has ended.
+
+### Highlights
+- **Close a terminal from anywhere.** `/close` on the phone, the local brain or an agent closes a terminal
+  Arbiter opened, each after your approval.
+- **Answer a terminal's question from the phone.** A question with numbered choices comes to the phone as
+  buttons.
+- **See what is really waiting.** A session that waits on its own background work shows yellow, not green.
+- **`/seat next` at an account's limit** finds a seat with headroom, and a refusal says how to switch by name.
+- **A new license key after one has ended**, with your databases and stored keys still readable.
+- **Formatting in the Chat panel**, and a short brief on the phone.
+
+### Upgrade notes
+- When Arbiter starts, it confirms your license with the license server if the last confirmation is more than
+  6 hours old. A start never waits for the answer. The privacy notice says when the license server is contacted.
+- At every start Arbiter compares each database with the tables and columns this version needs. If one is
+  missing, the engine does not start and says which database and what is missing: restore your Arbiter folder
+  from a backup, or send the file that `arbiter doctor --bundle FILE` writes to support.
+
+### New
+- **Close a terminal from the phone, the brain or an agent.** `/close <terminal>` on the phone asks for approval
+  like `/send` (and the 2FA code where one is required); `/help terminals` lists it. The brain's close asks for
+  approval and takes an exact id, the start of an id or a whole name. An agent's `arbiter_terminal_close` asks
+  you through Claude Code before each close. All three close only terminals Arbiter opened.
+- **Answer a terminal's question from the phone.** When a terminal shows a question with numbered choices, the
+  phone shows the question and its choices as buttons. A tap reads the terminal again, presses nothing if the
+  question changed, and goes through the same approval as `/send`.
+- **A new license key after one has ended.** Once the old license has ended (the license server says so, or its
+  end date has passed), activate a different key in the app. Your databases and stored keys stay readable and
+  move to the new license at the next start. A home in `strict` mode whose license ended while Arbiter was
+  stopped keeps no copy of the key it needs, so it asks you to renew the old license and activate it here once
+  more first.
+- **Formatting in the Chat panel:** bold, italics, inline code, code blocks, lists and headings. Links and tables
+  stay plain text.
+
+### Changed
+- **A session that waits on background work** (a background shell, or agents of its own) shows yellow and
+  "waiting on background work", on the phone (`/agents`, `/tail`) and in the app (Overview, Sessions).
+- **`/seat next` at an account's limit.** When the live seat has reached the rotation threshold, rotation takes a
+  seat with account headroom even if one of its model windows is full; a seat that can run the model still comes
+  first. A refusal ends with how to switch by name: `/seat <label>` on the phone, or the seat's Activate button
+  on the Seats page.
+- **The brief on the phone is short:** one sentence per project and what needs you, in `/brief` and in the
+  morning brief. `/brief --all` sends the whole brief, which the app shows.
+- **The chat follows the brain's memory window:** an answer may use a quarter of it (16,384 tokens at 65,536),
+  and project notes grow with it. A set `chat_max_tokens` still wins.
+- **Each agent's `arbiter mcp` uses about 27 MiB less memory:** it loads only the commands it runs.
+- **The seat history names who switched a seat:** the app, the command line, an agent or the phone.
+- **The Overview on a busy machine:** the terminal list waits longer, and when it cannot be read, the Overview
+  still shows tickets, projects and token rates and says the terminal list could not be read.
+- **A Codex login kept in the system keyring or in memory** is not switched, since writing the login file would
+  change nothing; the switch says how to move Codex to a login file, and the automatic switch says so once and
+  stands down.
+- **In a group chat, a turn started from the computer** can be refused only by the operator.
+
+### Fixed
+- A stored setting that no longer validates is skipped and named, in the log and in `arbiter doctor`, and the
+  engine starts; Reset on the Config page's Settings tab clears it.
+- A refusal names a terminal as you typed it, or by its session name. A renamed terminal goes by its new name in
+  refusals, window titles and the attach and close messages.
+- The brain offers only what its tools can do; for a seat switch it names `/seat <label>`.
+- The first-start question of how much Arbiter should ask is asked only while the engine holds no answer.
+- The "Needs you" rows on Home for a waiting session open that terminal's window.
+
 ## [0.1.4](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.4), November 16, 2026
 
 An update to the 0.1.3 pre-release: the Seats page covers Codex as well as Claude Code, a Codex terminal that
