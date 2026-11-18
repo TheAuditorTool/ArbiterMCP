@@ -4,6 +4,14 @@ What changed in each public release of Arbiter, newest first. Every release's do
 checksums and the signature over them are on its page under
 [Releases](https://github.com/TheAuditorTool/ArbiterMCP/releases).
 
+## [0.1.7](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.7), November 19, 2026
+
+A small update to the 0.1.6 pre-release.
+
+### Fixed
+- An internal edge case in Arbiter caused a rendering issue that could, on rare occasions, leave a section of the
+  Channels and Config pages missing.
+
 ## [0.1.6](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.6), November 19, 2026
 
 A fix release for the 0.1.5 pre-release: `/close` stops any running session, including one Arbiter did not

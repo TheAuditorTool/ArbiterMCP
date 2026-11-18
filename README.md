@@ -13,23 +13,21 @@ agents on your phone, and a clean pickup after a reboot.
 
 > ## Release status
 >
-> **Arbiter 0.1.6 is the current public pre-release** (November 19, 2026), for Windows 10 and 11
+> **Arbiter 0.1.7 is the current public pre-release** (November 19, 2026), for Windows 10 and 11
 > and 64-bit Linux. It is free until March 31, 2027: ask for a license at
 > [arbitermcp.com](https://arbitermcp.com/#get) and the key arrives by email.
 >
-> New in 0.1.6: `/close` stops any running session, also one Arbiter did not open, by ending its process
-> after your approval; Codex conversations show one row each, by name, with an id `/tail` and `/close`
-> take; and `/tail` reads a Codex conversation. Every change, release by release, is in the
+> New in 0.1.7: a fix for the Channels and Config pages. Every change, release by release, is in the
 > [changelog](CHANGELOG.md).
 
 ## Get it running
 
 | Platform | Download | Notes |
 |---|---|---|
-| Windows 10 or 11, x64 | [`Arbiter_0.1.6_x64-setup.exe`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_x64-setup.exe) (79 MB) | or [`Arbiter_0.1.6_x64_en-US.msi`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_x64_en-US.msi) |
-| Debian, Ubuntu and derivatives, x64 | [`Arbiter_0.1.6_amd64.deb`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_amd64.deb) | `sudo apt install ./Arbiter_0.1.6_amd64.deb` |
-| Any Linux, x64 | [`Arbiter_0.1.6_amd64.AppImage`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_amd64.AppImage) | glibc 2.34 or newer, WebKitGTK 4.1 |
-| Engine only, no desktop app | `arbiter-0.1.6-windows-x64.zip`, `arbiter-0.1.6-linux-x64.tar.gz` | on the [release page](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.6) |
+| Windows 10 or 11, x64 | [`Arbiter_0.1.7_x64-setup.exe`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.7/Arbiter_0.1.7_x64-setup.exe) (79 MB) | or [`Arbiter_0.1.7_x64_en-US.msi`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.7/Arbiter_0.1.7_x64_en-US.msi) |
+| Debian, Ubuntu and derivatives, x64 | [`Arbiter_0.1.7_amd64.deb`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.7/Arbiter_0.1.7_amd64.deb) | `sudo apt install ./Arbiter_0.1.7_amd64.deb` |
+| Any Linux, x64 | [`Arbiter_0.1.7_amd64.AppImage`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.7/Arbiter_0.1.7_amd64.AppImage) | glibc 2.34 or newer, WebKitGTK 4.1 |
+| Engine only, no desktop app | `arbiter-0.1.7-windows-x64.zip`, `arbiter-0.1.7-linux-x64.tar.gz` | on the [release page](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.7) |
 
 1. **Download** the file for your system.
 2. **Get your free key** at [arbitermcp.com](https://arbitermcp.com/#get). It runs until March 31, 2027,
@@ -148,18 +146,18 @@ tickets, the brief, the phone channel and the settings. Also on [arbitermcp.com]
 
 ## Check what you downloaded
 
-Every file is listed with its SHA256 in `arbiter-0.1.6-<os>-x64.SHA256SUMS`, signed with the Code Reality
+Every file is listed with its SHA256 in `arbiter-0.1.7-<os>-x64.SHA256SUMS`, signed with the Code Reality
 Labs release key `arbiter-release-signing-key.asc` (fingerprint
 `0CF6 23D6 6975 AC42 EF02 A1EA 98F3 6798 1E68 D3E3`), all attached to the release.
 
 ```
 gpg --import arbiter-release-signing-key.asc
-gpg --verify arbiter-0.1.6-linux-x64.SHA256SUMS.asc arbiter-0.1.6-linux-x64.SHA256SUMS
-sha256sum -c --ignore-missing arbiter-0.1.6-linux-x64.SHA256SUMS
+gpg --verify arbiter-0.1.7-linux-x64.SHA256SUMS.asc arbiter-0.1.7-linux-x64.SHA256SUMS
+sha256sum -c --ignore-missing arbiter-0.1.7-linux-x64.SHA256SUMS
 ```
 
-On Windows, `Get-FileHash .\Arbiter_0.1.6_x64-setup.exe` in PowerShell prints the SHA256 to compare with its
-line in `arbiter-0.1.6-windows-x64.SHA256SUMS`; GnuPG for Windows (Gpg4win) checks the signature with the
+On Windows, `Get-FileHash .\Arbiter_0.1.7_x64-setup.exe` in PowerShell prints the SHA256 to compare with its
+line in `arbiter-0.1.7-windows-x64.SHA256SUMS`; GnuPG for Windows (Gpg4win) checks the signature with the
 same `gpg --verify` command.
 
 ## Questions
