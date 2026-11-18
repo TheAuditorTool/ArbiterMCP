@@ -13,28 +13,29 @@ agents on your phone, and a clean pickup after a reboot.
 
 > ## Release status
 >
-> **Arbiter 0.1.5 is the current public pre-release** (November 17, 2026), for Windows 10 and 11
+> **Arbiter 0.1.6 is the current public pre-release** (November 19, 2026), for Windows 10 and 11
 > and 64-bit Linux. It is free until March 31, 2027: ask for a license at
 > [arbitermcp.com](https://arbitermcp.com/#get) and the key arrives by email.
 >
-> New in 0.1.5: close a terminal from your phone, the local brain or an agent, answer a terminal's
-> questions with buttons on the phone, sessions that wait on background work show as waiting, and the Chat
-> panel shows formatting. Every change, release by release, is in the [changelog](CHANGELOG.md).
+> New in 0.1.6: `/close` stops any running session, also one Arbiter did not open, by ending its process
+> after your approval; Codex conversations show one row each, by name, with an id `/tail` and `/close`
+> take; and `/tail` reads a Codex conversation. Every change, release by release, is in the
+> [changelog](CHANGELOG.md).
 
 ## Get it running
 
 | Platform | Download | Notes |
 |---|---|---|
-| Windows 10 or 11, x64 | [`Arbiter_0.1.5_x64-setup.exe`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.5/Arbiter_0.1.5_x64-setup.exe) (79 MB) | or [`Arbiter_0.1.5_x64_en-US.msi`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.5/Arbiter_0.1.5_x64_en-US.msi) |
-| Debian, Ubuntu and derivatives, x64 | [`Arbiter_0.1.5_amd64.deb`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.5/Arbiter_0.1.5_amd64.deb) | `sudo apt install ./Arbiter_0.1.5_amd64.deb` |
-| Any Linux, x64 | [`Arbiter_0.1.5_amd64.AppImage`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.5/Arbiter_0.1.5_amd64.AppImage) | glibc 2.34 or newer, WebKitGTK 4.1 |
-| Engine only, no desktop app | `arbiter-0.1.5-windows-x64.zip`, `arbiter-0.1.5-linux-x64.tar.gz` | on the [release page](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.5) |
+| Windows 10 or 11, x64 | [`Arbiter_0.1.6_x64-setup.exe`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_x64-setup.exe) (79 MB) | or [`Arbiter_0.1.6_x64_en-US.msi`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_x64_en-US.msi) |
+| Debian, Ubuntu and derivatives, x64 | [`Arbiter_0.1.6_amd64.deb`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_amd64.deb) | `sudo apt install ./Arbiter_0.1.6_amd64.deb` |
+| Any Linux, x64 | [`Arbiter_0.1.6_amd64.AppImage`](https://github.com/TheAuditorTool/ArbiterMCP/releases/download/v0.1.6/Arbiter_0.1.6_amd64.AppImage) | glibc 2.34 or newer, WebKitGTK 4.1 |
+| Engine only, no desktop app | `arbiter-0.1.6-windows-x64.zip`, `arbiter-0.1.6-linux-x64.tar.gz` | on the [release page](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.6) |
 
 1. **Download** the file for your system.
 2. **Get your free key** at [arbitermcp.com](https://arbitermcp.com/#get). It runs until March 31, 2027,
    with every feature included.
 3. **Open Arbiter** and paste the key on the first screen. Arbiter finds your Claude Code and Codex, and
-   offers the optional local model when you want it.
+   offers to download the local model, which runs on your graphics card.
 
 Windows will warn that it protected your PC, because this build is not code-signed yet: choose
 **More info**, then **Run anyway**. If you want to check the file first, see
@@ -93,8 +94,9 @@ and let agents read the documents and screenshots attached to a ticket.
 
 Arbiter runs a local model on your graphics card. Open the Brief, or schedule it for the morning, and it
 tells you what changed in each project since you last looked and ranks what needs you next. Ask it in chat
-to check a terminal or file a ticket, with no cloud call in the loop. The local model is optional: it needs
-8 GB of graphics memory, and everything else runs without it.
+to check a terminal or file a ticket, with no cloud call in the loop. The local model needs a graphics card
+with 8 GB of memory or more. Without one, chat, the brief and the terminal recaps are off; terminals, seats,
+tickets and the commands on the phone still work.
 
 ![Arbiter's Brief page: what needs the operator now, ranked next steps, and a summary card per project](docs/arbiter-brief.webp)
 
@@ -128,7 +130,7 @@ tickets, the brief, the phone channel and the settings. Also on [arbitermcp.com]
 | **Windows** | 10 or 11, 64-bit |
 | **Linux** | 64-bit, glibc 2.34 or newer. The desktop app needs WebKitGTK 4.1. |
 | **Coding clients** | Claude Code, Codex, or both, signed in with your own accounts |
-| **Graphics card** | Optional. The local model needs 8 GB of graphics memory and a driver with Vulkan support, which current NVIDIA, AMD and Intel drivers have. A card with 10 GB or more runs it at its full context window; an 8 GB card runs a smaller quantization of the same model. On a card with less, the local model does not start and the rest of Arbiter works. |
+| **Graphics card** | Needed for the local model: 8 GB of graphics memory or more and a driver with Vulkan support, which current NVIDIA, AMD and Intel drivers have. A card with 10 GB or more runs it at its full context window; an 8 GB card runs a smaller quantization of the same model. Without one, chat, the morning brief, the terminal recaps and approvals by the local model are off; terminals, seats, tickets, recovery and the commands on the phone still work. |
 | **Local model** | A separate download of about 5 to 7 GB (Gemma 4, Apache 2.0 license, from Hugging Face; no account needed). The Windows setup offers it at the end, the app offers it on every page until it is in place, and `arbiter setup-llm` downloads it on a machine without the app. |
 | **Internet** | To activate the license and check in with the license server |
 | **macOS** | Not supported yet |
@@ -146,18 +148,18 @@ tickets, the brief, the phone channel and the settings. Also on [arbitermcp.com]
 
 ## Check what you downloaded
 
-Every file is listed with its SHA256 in `arbiter-0.1.5-<os>-x64.SHA256SUMS`, signed with the Code Reality
+Every file is listed with its SHA256 in `arbiter-0.1.6-<os>-x64.SHA256SUMS`, signed with the Code Reality
 Labs release key `arbiter-release-signing-key.asc` (fingerprint
 `0CF6 23D6 6975 AC42 EF02 A1EA 98F3 6798 1E68 D3E3`), all attached to the release.
 
 ```
 gpg --import arbiter-release-signing-key.asc
-gpg --verify arbiter-0.1.5-linux-x64.SHA256SUMS.asc arbiter-0.1.5-linux-x64.SHA256SUMS
-sha256sum -c --ignore-missing arbiter-0.1.5-linux-x64.SHA256SUMS
+gpg --verify arbiter-0.1.6-linux-x64.SHA256SUMS.asc arbiter-0.1.6-linux-x64.SHA256SUMS
+sha256sum -c --ignore-missing arbiter-0.1.6-linux-x64.SHA256SUMS
 ```
 
-On Windows, `Get-FileHash .\Arbiter_0.1.5_x64-setup.exe` in PowerShell prints the SHA256 to compare with its
-line in `arbiter-0.1.5-windows-x64.SHA256SUMS`; GnuPG for Windows (Gpg4win) checks the signature with the
+On Windows, `Get-FileHash .\Arbiter_0.1.6_x64-setup.exe` in PowerShell prints the SHA256 to compare with its
+line in `arbiter-0.1.6-windows-x64.SHA256SUMS`; GnuPG for Windows (Gpg4win) checks the signature with the
 same `gpg --verify` command.
 
 ## Questions
@@ -168,7 +170,9 @@ and it runs until March 31, 2027.
 **Does it replace Claude Code or Codex?** No. Arbiter drives the Claude Code and Codex you already have
 installed and signed in. It never runs the coding turns itself.
 
-**Do I need a graphics card?** No. Only the optional local model does.
+**Do I need a graphics card?** For the local model, yes: 8 GB of graphics memory or more (10 GB for its
+largest setting). Without one, chat in plain words, the brief and the terminal recaps are off; terminals,
+seats, tickets, recovery and the commands on the phone still work.
 
 **Is there a Mac version?** Not yet.
 

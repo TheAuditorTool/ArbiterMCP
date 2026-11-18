@@ -4,6 +4,43 @@ What changed in each public release of Arbiter, newest first. Every release's do
 checksums and the signature over them are on its page under
 [Releases](https://github.com/TheAuditorTool/ArbiterMCP/releases).
 
+## [0.1.6](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.6), November 19, 2026
+
+A fix release for the 0.1.5 pre-release: `/close` stops any running session, including one Arbiter did not
+open, and Codex conversations show on the phone, in the brain and in the app one row each, by name, with an id
+`/tail` and `/close` accept.
+
+### Highlights
+- **Close any running session.** `/close` on the phone, or the local brain's close, stops a session Arbiter did
+  not open by ending its process, after your approval and your 2FA code on the phone.
+- **One row per Codex conversation**, with its name and an id `/tail` and `/close` take.
+- **`/tail` reads a Codex conversation.**
+- **A Codex conversation in a long turn shows busy** until the turn ends.
+
+### Upgrade notes
+- `/close` and the brain's close now reach a session Arbiter did not open (a Claude Code window, Codex in an
+  editor) by ending the process that runs it. The approval says which process ends, and every other session that
+  process also runs. It always asks, also when the brain may approve other actions, and on the phone it always
+  asks for the 2FA code. An agent's `arbiter_terminal_close` still closes only terminals Arbiter opened.
+
+### New
+- **Close any running session.** A session Arbiter did not open is closed by ending its process: it is asked to
+  stop, and killed after 10 seconds if it is still running. Each process is named by its id and its start time,
+  read again right before it is signalled, so a process the system has given the same id since is never touched.
+  If the process changed while the approval waited, nothing is ended and the phone says so.
+- **`/tail` reads a Codex conversation:** what you wrote, what Codex answered, and the tools it ran.
+
+### Changed
+- **One row per Codex conversation.** The guardian reviews and agents Codex starts for itself are counted as that
+  conversation's agents on its row.
+- **Codex conversations carry their names** as Codex keeps them, a rename of yours included.
+- **Session ids are as long as it takes to be unique.** Most stay 8 characters; two sessions that share their
+  first 8 (Codex ids begin with the time they were made) are shown with enough characters to tell them apart,
+  and `/tail` and `/close` take that id.
+- **Part of a name, a project folder's name and "did you mean"** match only sessions that are running.
+- **A Codex conversation in a long turn** shows busy until the turn ends.
+- **A close the brain cannot name exactly** is refused before any approval or 2FA code is asked.
+
 ## [0.1.5](https://github.com/TheAuditorTool/ArbiterMCP/releases/tag/v0.1.5), November 17, 2026
 
 A fix release for the 0.1.4 pre-release: you can close a terminal from the phone, from the brain or from an
